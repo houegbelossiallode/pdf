@@ -62,7 +62,7 @@
                 <!-- Bouton pour supprimer l'article du panier -->
                 <form action="{{ route('cart.remove', $id) }}" method="POST">
                     @csrf
-                    <button type="submit" class="btn btn-outline-danger">Retirer</button>
+                    <button type="submit" class="btn btn-outline-danger">Supprimer</button>
                 </form>
               </div>
             </div>
