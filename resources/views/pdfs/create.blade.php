@@ -9,15 +9,15 @@
     <title>Document</title>
 </head>
 <body>
-    
+
 
 
     <div class="container mt-15">
 
         <div class="row">
             <div class="col-sm-6">
-                
-            
+
+
             <form action="{{ route('pdf.store') }}" method="POST" enctype="multipart/form-data" class="mt-15">
                 @csrf
                 <div>
@@ -42,10 +42,11 @@
                     @enderror
                 </div>
                 <button type="submit" class="btn btn-success">Enregistrer le PDF</button>
+                <button class="btn btn-info"><a href="{{ route('pdf.index') }}">Liste des pdfs</a></button>
             </form>
             </div>
             <div class="col-sm-6">
-                
+
             </div>
 
 
@@ -54,7 +55,7 @@
 
     </div>
 
-   
+
 </body>
 </html>
 
