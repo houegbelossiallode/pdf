@@ -54,7 +54,7 @@ public function add( $id) {
             session()->put('cart', $cart);  // Mettre à jour le panier dans la session
         }
 
-        return redirect()->back()->with('success', 'Quantité mise à jour.');
+        return redirect()->back()->with('info', 'Quantité mise à jour.');
     }
 
     public function remove($id)
@@ -67,7 +67,7 @@ public function add( $id) {
         session()->put('cart', $cart);
     }
 
-    return redirect()->back()->with('success', 'L\'article a été retiré du panier.');
+    return redirect()->back()->with('danger', 'L\'article a été retiré du panier.');
 }
 
 // CartController.php

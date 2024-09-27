@@ -90,6 +90,47 @@
       </div>
     </div>
   </section>
+
+
+
+
+
+
+
+  <!-- jQuery (Toastr dépend de jQuery) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Toastr JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+      @if (Session::has('message'))
+      <script>
+          toastr.options = {
+              "progressBar" : true,
+          }
+          toastr.success("{{ Session::get('message') }}", 'Success !!!'  );
+      </script>
+      @endif
+
+      @if (Session::has('info'))
+      <script>
+          toastr.options = {
+              "progressBar" : true,
+          }
+          toastr.info("{{ Session::get('info') }}", 'Info !!!'  );
+      </script>
+      @endif
+
+
+      @if (Session::has('danger'))
+      <script>
+          toastr.options = {
+              "progressBar" : true,
+          }
+          toastr.error("{{ Session::get('danger') }}"  );
+      </script>
+      @endif
+
+
 </body>
 </html>
 
