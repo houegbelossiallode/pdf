@@ -10,11 +10,11 @@ class PdfController extends Controller
 
     public function index(){
         $pdfs = Pdf::all();
-        return view('pdfs.index', compact('pdfs'));   
+        return view('pdfs.index', compact('pdfs'));
    }
-    
+
     public function create(){
-         return view('pdfs.create');   
+         return view('pdfs.create');
     }
 
     public function store(Request $request)
@@ -35,7 +35,7 @@ class PdfController extends Controller
             'file' => 'required|mimes:pdf|max:10000', // Valider que le fichier est un PDF
             'price' => 'required|numeric',
         ],  $messages);
-  
+
         // Enregistrer le fichier PDF dans le dossier storage
         $filePath = $request->file('file')->store('pdfs', 'public');
 
@@ -45,6 +45,6 @@ class PdfController extends Controller
             'file_path' => $filePath,
             'price' => $request->input('price'),
         ]);
-        return redirect()->route('pdf.index')->with('success', 'PDF enregistré avec succès.');
+        return redirect()->back()->with('message', 'PDF enregistré avec succès.');
        }
 }
