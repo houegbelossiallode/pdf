@@ -27,7 +27,7 @@ public function add( $id) {
 
     session()->put('cart', $cart);
 
-    return redirect()->back()->with('success', 'PDF ajouté au panier !');
+    return redirect()->back()->with('message', 'PDF ajouté au panier !');
     }
 
     public function increment($id)
@@ -40,7 +40,7 @@ public function add( $id) {
             session()->put('cart', $cart);  // Mettre à jour le panier dans la session
         }
 
-        return redirect()->back()->with('success', 'Quantité mise à jour.');
+        return redirect()->back()->with('message', 'Quantité mise à jour.');
     }
 
 
