@@ -9,7 +9,7 @@ class PdfController extends Controller
 {
 
     public function index(){
-        $pdfs = Pdf::all();
+        $pdfs = Pdf::orderBy('created_at','desc')->get();
         return view('pdfs.index', compact('pdfs'));
    }
 
