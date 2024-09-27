@@ -15,14 +15,7 @@
     <div class="container h-100 py-5">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-10">
-            @if (session()->has('success'))
-            <div class="alert alert-success">{{ session()->get('success') }}
-            </div>
-            @endif
-            @if (session()->has('error'))
-            <div class="alert alert-danger">{{ session()->get('error') }}
-            </div>
-            @endif
+
           <div class="d-flex justify-content-between align-items-center mb-4">
             <h3 class="fw-normal mb-0">Mon panier</h3>
             <div>
@@ -108,29 +101,11 @@
           toastr.options = {
               "progressBar" : true,
           }
-          toastr.success("{{ Session::get('message') }}", 'Success !!!'  );
+          toastr.success("{{ Session::get('message') }}"  );
       </script>
       @endif
 
-      @if (Session::has('info'))
-      <script>
-          toastr.options = {
-              "progressBar" : true,
-          }
-          toastr.info("{{ Session::get('info') }}", 'Info !!!'  );
-      </script>
-      @endif
-
-
-      @if (Session::has('danger'))
-      <script>
-          toastr.options = {
-              "progressBar" : true,
-          }
-          toastr.error("{{ Session::get('danger') }}"  );
-      </script>
-      @endif
-
+     
 
 </body>
 </html>

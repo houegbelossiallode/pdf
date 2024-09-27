@@ -21,6 +21,7 @@
 
             <form action="{{ route('pdf.store') }}" method="POST" enctype="multipart/form-data" class="mt-15">
                 @csrf
+                @method('post')
                 <div>
                     <label for="name">Nom du PDF :</label>
                     <input type="text" name="name" class="form-control" value="{{ old('name') }}">
